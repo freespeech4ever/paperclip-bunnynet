@@ -38,14 +38,6 @@ You can set these environment variables in your application or use a gem like [d
 
 The `BUNNYNET_STORAGE_URL` is optional and allows you to specify a custom storage URL if needed. If not set, it defaults to "https://storage.bunnycdn.com".
 
-To verify your Bunny.net configuration, you can use the following Rake task:
-
-```
-$ rake bunnynet:verify_config
-```
-
-This task will check if all required environment variables are set and display your configuration (with the API key partially masked for security).
-
 ### The `:path` option
 
 To change the path of the file, use Paperclip's `:path` option:
@@ -70,19 +62,6 @@ To check if a file exists on Bunny.net:
 user.avatar.exists?
 # user.avatar.exists?(style)
 ```
-
-## Development and Testing
-
-After checking out the repo, run `bin/setup` to install dependencies. 
-
-To set up your development environment:
-
-1. Copy the `.env.example` file to `.env`:
-   ```
-   cp .env.example .env
-   ```
-
-2. Edit the `.env` file and add your Bunny.net credentials.
 
 
 ## License
