@@ -40,8 +40,11 @@ The gem uses the following environment variables:
 - `BUNNYNET_STORAGE_ZONE`: Your Bunny.net storage zone name
 - `BUNNYNET_API_KEY`: Your Bunny.net API key
 - `BUNNYNET_CDN_URL`: Your Bunny.net CDN URL (e.g., https://yourzone.b-cdn.net)
+- `BUNNYNET_STORAGE_URL`: Your Bunny.net storage URL (default: https://storage.bunnycdn.com)
 
 You can set these environment variables in your application or use a gem like [dotenv](https://github.com/bkeepers/dotenv) to manage them.
+
+The `BUNNYNET_STORAGE_URL` is optional and allows you to specify a custom storage URL if needed. If not set, it defaults to "https://storage.bunnycdn.com".
 
 To verify your Bunny.net configuration, you can use the following Rake task:
 

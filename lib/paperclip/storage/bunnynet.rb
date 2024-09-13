@@ -11,6 +11,7 @@ module Paperclip
           @bunnynet_storage_zone = ENV['BUNNYNET_STORAGE_ZONE']
           @bunnynet_api_key = ENV['BUNNYNET_API_KEY']
           @bunnynet_cdn_url = ENV['BUNNYNET_CDN_URL']
+          @bunnynet_storage_url = ENV['BUNNYNET_STORAGE_URL'] || 'https://storage.bunnycdn.com'
         end
       end
 
@@ -60,7 +61,7 @@ module Paperclip
 
       def flush_deletes
         @queued_for_delete.each do |path|
-          url = URI.parse("https://storage.bunnycdn.com/#{@bunnynet_storage_zone}/#{path}")
+          url = URI.parse("#{@bunnynet_storage_url}/#{@bunnynet_storage_zone}/#{path}")
           http = Net::HTTP.new(url.host, url.port)
           http.use_ssl = true
           request = Net::HTTP::Delete.new(url.path)
@@ -76,7 +77,7 @@ module Paperclip
 
       def bunnynet_url(style_name = default_style)
         path = path(style_name)
-        URI.parse("https://storage.bunnycdn.com/#{@bunnynet_storage_zone}/#{path}")
+        URI.parse("#{@bunnynet_storage_url}/#{@bunnynet_storage_zone}/#{path}")
       end
 
       def public_url(style_name = default_style)
