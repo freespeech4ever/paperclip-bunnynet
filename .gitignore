@@ -1,9 +1,36 @@
+# Bundler
 .bundle
 Gemfile.lock
 pkg/
+
+# Temporary files
 tmp/
+
+# Test files
 .rspec
-spec/dropbox.yml
-spec/app_folder.yml
-wiki/
+spec/fixtures/vcr_cassettes/
+
+# Environment variables
+.env
+
+# Ruby version
 .ruby-version
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Bunny.net specific
+spec/bunnynet.yml
+
+# Keep the existing entries
+wiki/

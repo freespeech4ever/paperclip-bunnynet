@@ -1,8 +1,8 @@
 module Paperclip
-  module Dropbox
+  module Bunnynet
     class Railtie < Rails::Railtie
       rake_tasks do
-        load "paperclip/dropbox/tasks.rake"
+        load "paperclip/bunnynet/tasks.rake"
       end
     end
   end
