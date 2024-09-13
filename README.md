@@ -8,7 +8,7 @@ This gem extends [Paperclip](https://github.com/thoughtbot/paperclip) with
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "paperclip-bunnynet"
+gem "paperclip-bunnynet", github: "freespeech4ever/paperclip-bunnynet"
 ```
 
 Then execute:
