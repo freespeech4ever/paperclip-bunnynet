@@ -19,18 +19,10 @@ $ bundle install
 
 ## Usage
 
-Configure your model to use Bunny.net storage:
+Configure your application to use Bunny.net storage, in `config/initializers/paperclip.rb`:
 
 ```ruby
-class User < ActiveRecord::Base
-  has_attached_file :avatar,
-    storage: :bunnynet,
-    bunnynet_options: {
-      storage_zone: ENV['BUNNYNET_STORAGE_ZONE'],
-      api_key: ENV['BUNNYNET_API_KEY'],
-      cdn_url: ENV['BUNNYNET_CDN_URL']
-    }
-end
+Paperclip::Attachment.default_options[:storage] = :bunnynet
 ```
 
 ### Configuration
