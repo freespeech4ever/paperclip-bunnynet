@@ -13,7 +13,7 @@ module Paperclip
 end
 
 # Register Bunnynet storage with Paperclip
-Paperclip::Storage.register(:bunnynet, Paperclip::Storage::Bunnynet)
+# Paperclip::Storage.register(:bunnynet, Paperclip::Storage::Bunnynet)
 
 # Load rake tasks if Rails is defined
 if defined?(Rails)
