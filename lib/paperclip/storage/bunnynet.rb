@@ -56,7 +56,7 @@ module Paperclip
           url = bunnynet_url(style_name)
           # check an environment variable, BUNNYNET_SKIP_IF_EXISTS, and if true, check exists? first.
           if ENV['BUNNYNET_SKIP_IF_EXISTS'] && public_exists?(style_name)
-            logger.info("paperclip-bunnynet: Skipping upload for #{path(style_name)} because it already exists.")
+            puts "paperclip-bunnynet: Skipping upload for #{path(style_name)} because it already exists."
             next
           end
           http = Net::HTTP.new(url.host, url.port)
