@@ -25,6 +25,15 @@ module Paperclip
         response.code.to_i == 200
       end
 
+      def public_exists?(style_name = default_style)
+        url = public_url(style_name)
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+        request = Net::HTTP::Head.new(url.path)
+        response = http.request(request)
+        response.code.to_i == 200
+      end
+
       def copy_to_local_file(style, local_dest_path)
         url = bunnynet_url(style)
         http = Net::HTTP.new(url.host, url.port)
@@ -46,7 +55,7 @@ module Paperclip
         @queued_for_write.each do |style_name, file|
           url = bunnynet_url(style_name)
           # check an environment variable, BUNNYNET_SKIP_IF_EXISTS, and if true, check exists? first.
-          if ENV['BUNNYNET_SKIP_IF_EXISTS'] && exists?(style_name)
+          if ENV['BUNNYNET_SKIP_IF_EXISTS'] && public_exists?(style_name)
             logger.info("paperclip-bunnynet: Skipping upload for #{path(style_name)} because it already exists.")
             next
           end
