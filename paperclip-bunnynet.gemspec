@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "paperclip-bunnynet"
-  gem.version       = "0.2.0"
+  gem.version       = "0.3.0"
 
   gem.homepage      = "https://github.com/freespeech4ever/paperclip-bunnynet"
   gem.description   = %q{Extends Paperclip with Bunny.net storage.}

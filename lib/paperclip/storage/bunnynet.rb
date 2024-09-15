@@ -45,6 +45,11 @@ module Paperclip
       def flush_writes
         @queued_for_write.each do |style_name, file|
           url = bunnynet_url(style_name)
+          # check an environment variable, BUNNYNET_SKIP_IF_EXISTS, and if true, check exists? first.
+          if ENV['BUNNYNET_SKIP_IF_EXISTS'] && exists?(style_name)
+            logger.info("paperclip-bunnynet: Skipping upload for #{path(style_name)} because it already exists.")
+            next
+          end
           http = Net::HTTP.new(url.host, url.port)
           http.use_ssl = true
           request = Net::HTTP::Put.new(url.path)

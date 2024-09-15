@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.3.0
+
+* Added `BUNNYNET_SKIP_IF_EXISTS` environment variable to skip uploading if the file already exists on Bunny.net
+
 ## Version 0.2.0
 
 * Added configurable Bunny.net storage URL option
