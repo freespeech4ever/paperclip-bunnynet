@@ -26,7 +26,7 @@ module Paperclip
       end
 
       def public_exists?(style_name = default_style)
-        url = public_url(style_name)
+        url = URI.parse(public_url(style_name))
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         request = Net::HTTP::Head.new(url.path)
