@@ -53,6 +53,9 @@ module Paperclip
 
       def flush_writes
         @queued_for_write.each do |style_name, file|
+          if style_name == :blurhash
+            next
+          end
           url = bunnynet_url(style_name)
           # check an environment variable, BUNNYNET_SKIP_IF_EXISTS, and if true, check exists? first.
           if ENV['BUNNYNET_SKIP_IF_EXISTS'] && public_exists?(style_name)

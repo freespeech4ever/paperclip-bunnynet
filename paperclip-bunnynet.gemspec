@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "paperclip-bunnynet"
-  gem.version       = "0.3.0"
+  gem.version       = "0.4.0"
 
   gem.homepage      = "https://github.com/freespeech4ever/paperclip-bunnynet"
   gem.description   = %q{Extends Paperclip with Bunny.net storage.}
@@ -16,8 +16,6 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = ">= 2.5.0"
 
   gem.license       = "MIT"
-
-  gem.add_dependency "paperclip", ">= 3.1", "< 7"
 
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec", "~> 3.0"
